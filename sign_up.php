@@ -1,9 +1,11 @@
 <?php
+    @session_start();
 
     require_once 'sub/db_connect.php';
 
+    include 'sub/navbar.php';
+
     if(isset($_POST['submit'])){
-        // HTML Etiket girişinden kaynaklı XSS doğmasını engelleyelim
         $username = htmlentities($_POST['username']);
         $email  = htmlentities($_POST['email']);
         $password    = htmlentities($_POST['password']);
@@ -14,9 +16,8 @@
         $SORGU->bindParam(":username", $username);
         $SORGU->bindParam(":email",  $email);
         $SORGU->bindParam(":password",    $password);
-        // SQL Sorgumuzu çalıştıralım
+        // SQL Emrini çalıştır
         $SORGU->execute();
-        // İşlem tamam. Ana sayfaya yönlendirelim.
         header("location: index.php");
         die();
     }
@@ -25,13 +26,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <!-- Required meta tags -->
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-
         <title>Üye Ol - 3B Depom</title>
     </head>
     <body>
