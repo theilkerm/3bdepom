@@ -1,8 +1,5 @@
 <?php
-    @session_start();
-
-    require_once 'sub/db_connect.php';
-
-    include 'sub/navbar.php';
-
-?>
+require_once "core/init.php";
+include "view/header.php";
+include "view/navbar.php";
+include "view/footer.php";

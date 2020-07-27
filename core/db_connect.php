@@ -13,4 +13,3 @@
     } catch (PDOException $exception){
         die("Veritabanına bağlantı kurulamadı: " . $exception->getMessage());
     }
-?>
