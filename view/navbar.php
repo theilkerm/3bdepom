@@ -11,7 +11,7 @@
         <?php if($_SESSION["signed"] == 1){
                 echo ("Hoşgeldininiz sayın ");
                 echo $_SESSION["username"];
-                echo '</br><a href="core/sign_out.php">Çıkış</a>';
+                echo '</br><a href="./create.php">Tasarım ekle</a></br><a href="core/sign_out.php">Çıkış</a>';
         
             } else {
             echo '<a href="sign_in.php">Giriş Yap</a></br><a href="sign_up.php">Üye ol</a>';

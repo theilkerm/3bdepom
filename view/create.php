@@ -23,7 +23,7 @@
             <div class="jumbotron jumbotron-fluid">
             <div class="container">
                 <h1 class="display-4">Tasarım Ekle</h1>
-                <form method="POST" autocomplete="on" enctype="multipart/form-data">
+                <form method="POST" action="./upload.php" autocomplete="on" enctype="multipart/form-data">
                     <input required type="text" class="form-control" name="name" placeholder="Tasarım Adı Nedir?"><br>
                     <input required type="text" class="form-control" name="description" placeholder="Tasarım Açıklaması"><br>
                     <input type="hidden" name="user_id" value="<?=$_SESSION['id']?>">
@@ -33,10 +33,10 @@
                     <option value="1" >Oyuncak</option>
                     </select>
                     </div>
-                    Tasarım Dosyası(stl)
-                    <input required type="file" class="form-control" name="File" placeholder="Tasarım dosyası(stl)" value="Tasarım dosyası(stl)"><br>
-                    Tasarım Görseli(jpg)
-                    <input required type="file" class="form-control" name="Image" placeholder="Tasarım görseli" value="Tasarım görseli"><br>
+                    Tasarım Dosyası(stl):
+                    <input type="file" class="form-control" name="File" id="File" value="Tasarım dosyası(stl)"><br>
+                    Tasarım Görseli:
+                    <input type="file" class="form-control" name="Image" id="Image" value="Tasarım görseli"><br>
                     <input class="btn btn-primary btn-dark" type="submit" name="submit" value="Yeni Tasarım Ekle" />
                 </form>
             </div>
